@@ -1,6 +1,13 @@
+// 34:45
 import Header from './components/Header';
 import Drawer from './components/Drawer'
-import Card from './components/Card';
+import Card from './components/card';
+
+const CardArr = [
+  {name:'Мужские тапочки Nike цвета капусты стильные', price:12999},
+  {name:'Мужские кроксы Adidas цвета красного чёткие', price:16999},
+  {name:'Мужские подкрадули New Balance цвета фикалис', price:8999}
+]
 function App() {
   return (
     <div className="wrapper">
@@ -15,9 +22,9 @@ function App() {
           </div>    
         </div>
         <div className="snaekers">
-          <Card />
-          <Card />
-          <Card />
+          {CardArr.map(val => (
+            <b>1</b>
+          ))}
         </div>
       </div>
     </div>
