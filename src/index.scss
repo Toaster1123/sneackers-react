@@ -104,6 +104,9 @@ header {
     border: 0;
     padding:13px;
   }
+  input:focus{
+    outline: none; 
+  }
 }
 .top_body{
   display: flex;
@@ -126,22 +129,37 @@ header {
 }
 .drawer{
   position: absolute;
-  right: 0;
+  width: 420px;
   height: 100%;
-  width: 385px;
+  right: 0;
   background: #fff;
   box-shadow:-10px 4px 24px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  .items{
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 40px;
+  }
 }
 h2{
-  margin: 0;
+  img{
+    cursor: pointer;
+  }
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+ 
 }
 .cartItem{
   display: flex;
   align-items:center;
-  border: 1px solid gray;
+  border: 1px solid rgb(226, 226, 226);
   border-radius:20px;
   overflow: hidden;
+  padding: 10px;
+  margin-bottom: 20px;
   .cartItemImg{
     height: 70px;
     width: 70px;
@@ -169,5 +187,58 @@ h2{
   }
   img:last-of-type:hover{
     opacity: 1;
+  }
+}
+.cartTotalBlock{
+  margin-bottom: 30px;
+  .greenButton{
+    cursor: pointer;
+    width: 100%;
+    background:#8ec150;
+    border-radius:18px;
+    height: 55px;
+    border:0;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    transition: background 0.2s ease-in-out;
+    &:hover{
+      background:lighten($color: #8ec150, $amount: 7%)
+    }
+    &:active{
+      background:darken($color: #8ec150, $amount: 7%)
+    }
+  }
+  .greenButton{
+    position: relative;
+    &:hover{
+      img{
+        transform: translateX(5px);
+      }
+    }
+    img{
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      transition: transform 0.15s ease-in-out;
+
+    }
+  }
+}
+.cart-bottom{
+  margin-left: -40px;
+  margin-bottom: 40px;
+  div{
+    flex: 1;
+    height: 1px;
+    border-bottom: 1px dashed #b8b8b8;
+    position: relative;
+    top: -4px;
+    margin: 0 7px;
+  }
+  li{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
   }
 }
